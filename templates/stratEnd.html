@@ -8,6 +8,29 @@
         <script src="app.js"></script>
     </head>
     <body>
-        
+        <!--If the strategy was successful-->
+            <p> Great!</p>
+            <p> We'll recommend that again for you.</p>
+            <!--If it's a default strategy-->
+                <p> You can check out <a class="link" href={{href}}">{{name}}</a> for more.</a>
+            <!--endif-->
+            <a class="button" href="home">Done</a>
+        <!--endif-->
+
+        <!--If the strategy was unsuccessful-->
+            <p>Sorry that didn't help.</p>
+            <p>What would you like to do?</p>
+            <a class="button" href="/suggestions">Try something else</a>
+            <a class="button" href="/delay">Ask again in an hour</a>
+            <a class="button" href="/home">Just leave it</a>
+        <!--endif-->
+
+        <!--If the last three strategies have been unsuccessful-->
+            <p>Seems like this stress is pretty persistent.</p>
+            <p>Would you like to talk to a counselor?</p>
+            <a class="button" href="/resources#counseling">Tell me more</a>
+            <a class="button" href="/home">No</a>
+            <a class="button" href="TODO">Yes</a>
+        <!--endif-->
     </body>
 </html>

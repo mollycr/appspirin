@@ -78,6 +78,14 @@ app.get('/stratEnd', function(req, res){
     //send to home
 }
 
+app.get('/newStrategy', function(req, res){
+
+}
+
+app.post('/newStrategy', function(req, res){
+
+}
+
 var server = app.listen(3000, function(){
 
     var host = server.address().address

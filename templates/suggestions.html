@@ -8,6 +8,10 @@
         <script src="app.js"></script>
     </head>
     <body>
-        
+        <h1>De-stress:</h1>
+        <div ng-repeat="ID, title in strats">
+            <a class="button" href="/strats/{{ID}}">{{title}}</a>
+        </div>
+        <a class="link" href="/newStrategy">+ Add a strategy</a>
     </body>
 </html>
