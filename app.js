@@ -1,96 +1,60 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
-app.get('/', function(req, res){
-    //show splash screen for n seconds
-    //redirect to login page
-    res.send('Hello World!')
-})
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
-app.get('/u/:user',function(req, res){
-    //show splash screen for n seconds
-    var user = req.params.user;
-    //log in as :user
-    //  if :user doesn't exist, redirect to login
-    //redirect to home
-}) 
+var app = express();
 
-app.get('/login', function(req, res){
-    //login or create account - just render
-})
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
-app.post('/login', function(req, res){
-    //is it a login or a create?
-    //if it's a create, make a new user object, new email in the cron job and redirect to home
-    //if it's a login, load the user appropriately (probably sessions) and redirect to home
-})
+// uncomment after placing your favicon in /public
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/home', function(req, res){
-    //just render the home page
-    //links to logout, settings, checkin, history, resources
-})
+app.use('/', routes);
+app.use('/users', users);
 
-app.get('/settings', function(req, res){
-    //render settings page
-    //a lot of stuff will post here
-})
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
-app.post('/settings', function(req, res){
-    //change the JSON objects appropriately
-})
+// error handlers
 
-app.post('/logout', function(req, res){
-    //logout
-    //redirect to login
-})
-
-app.get('/history', function(req, res){
-    //render the appropriate page
-})
-
-app.get('/resources', function(req, res){
-    //just render the page
-})
-
-app.get('/checkin', function(req, res){
-    //record timestamp and pre-level
-    //send on to suggestions
-})
-
-app.get('/suggestions', function(req, res){
-    //display suggestions for user and level, ordered by usage
-    //send on to strategy page
-})
-
-app.get('/strat/:strategy', function(req, res){
-    var strategy = req.params.strategy;
-    //render strategy
-    //send on to post checkin
-})
-
-app.get('/checkinPost', function(req, res){
-    //record post score
-    //send to stratEnd
-})
-
-app.get('/stratEnd', function(req, res){
-    //render appropriate end message for score difference
-    //send to home
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
 }
 
-app.get('/newStrategy', function(req, res){
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
 
-}
 
-app.post('/newStrategy', function(req, res){
-
-}
-
-var server = app.listen(3000, function(){
-
-    var host = server.address().address
-    var port = server.address().port
-
-    console.log('Example app listening at http://%s:%s', host, port)
-
-})
+module.exports = app;
