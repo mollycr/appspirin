@@ -100,6 +100,8 @@ app.post('/newStrategy', function(req, res){
 	//put the info in the right places
 });
 
+app.use("/static", express.static(__dirname + '/static'));
+
 var server = app.listen(3000, function(){
 
     var host = server.address().address
