@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <title>Create Account</title>
         <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
-        <link type="text/css" rel="stylesheet" href="static/css/login.css">
+        <link type="text/css" rel="stylesheet" href="static/css/createAccount.css">
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-        <meta name="viewport" content="width = 380"/>
+		<meta name="viewport" content="width = 380"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
     </head>
     <body>
 		<div class="header">
@@ -14,12 +15,14 @@
 			<h1>Appspirin</h1>
 		</div>
 
-		<h2>Log in</h2>
-        <form action="/login" method="post">
+		<h2>Create an account</h2>
+
+		<form action="/createAccount" method="post">
 			<input type="text" placeholder="Email"/>
 			<input type="password" placeholder="Password"/>
-			<a href="createAccount">New user?</a>
-			<input type="submit" value="Sign in"/>
+			<input type="password" placeholder="Confirm password"/>
+			<a href=/login">Returning user?</a>
+			<input type="submit" value="Create account"/>
 		</form>
 		<a href="/home">Log in</a>
     </body>

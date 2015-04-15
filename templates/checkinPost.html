@@ -5,11 +5,25 @@
         <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
         <link type="text/css" rel="stylesheet" href="static/css/checkinPost.css">
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-        <script src="app.js"></script>
+        <meta name="viewport" content="width = 380"/>
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        The post-checkin stuff will go here
-		
+ 		<div class="header">
+			<img class="logo" src="static/logo.png"/>
+			<h1>History</h1>
+		</div>
+		Did this strategy help reduce your stress?
+		<form action="/successful"><!-- TODO this will need to post-->
+			<input type="submit" value="Yes">
+		</form>
+		<form action="/unsuccessful"><!-- TODO this will need to post-->
+			<input type="submit" value="No">
+		</form>
+		<form action="/medSuccessful"><!-- TODO this will need to post-->
+			<input type="submit" value="Kind of / Not sure">
+		</form>
+	
 		<a href="/stratEnd">Save</a>
     </body>
 </html>

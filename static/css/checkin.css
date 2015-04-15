@@ -1,21 +1,10 @@
-.clickable {
-    border: 1px solid #333;
-    background: #eee;
-    height: 40px;
-    width: 200px;
-    margin: 15px;
-    position: relative;
+label > input{ /* HIDE RADIO */
+  display:none;
 }
-.display {
-    height: 16px;
-    position: absolute;
-    width: 100%;
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
 }
-.progress {
-    position:absolute;
-    left:0;
-    top:0;
-    background:green;
-    height:40px;
-    width:10px;
+label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
 }

@@ -101,6 +101,7 @@ app.post('/newStrategy', function(req, res){
 });
 
 app.use("/static", express.static(__dirname + '/static'));
+app.use("/assets", express.static(__dirname + '/images'));
 
 var server = app.listen(3000, function(){
 
