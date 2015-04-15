@@ -10,11 +10,23 @@
 
     </head>
     <body>
-        <h1>De-stress:</h1>
-        <div ng-repeat="ID, title in strats">
-            <a class="button" href="/strats/{{ID}}">{{title}}</a>
-        </div>
-        <a class="link" href="/newStrategy">+ Add a strategy</a>
+		<div class="header">
+			<a href="/home"<img class="logo" src="/images/logo.png"/></a>
+			<h1>De-Stress</h1>
+		</div>
+
+		<div class="stratBox">
+	        <a class="link" href="/newStrategy">+ Add a strategy</a>
+    	    <div class="scrollable" ng-repeat="ID, title in strats">
+				<div class="stratCard">
+					<img class="stratIcon" src="static/images/icons/{{category}}.png"/>
+	        	    <a class="stratTitle" href="/strats/{{ID}}">{{title}}</a>
+        	</div>
+		</div>
+
+		<div classs="textbox">
+			Meditation is a great way to reduce stress and increase concentration. I have a headache and I pretty much need to be coding and nothing else for the next two weeks.
+		</div>
 		<a class="link" href="/strat/temporary">Continue</a>
     </body>
 </html>

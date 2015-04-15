@@ -1,10 +1,11 @@
 var express = require('express');
 var app = express();
+var rootDir = "/home/mrobison/appspirin";
 
 app.get('/', function(req, res){
     //show splash screen for n seconds
     //redirect to login page
-    res.sendFile('templates/home.html', { root: __dirname });
+    res.sendFile('templates/home.html', { root: rootDir });
 })
 
 app.get('/u/:user',function(req, res){
@@ -17,7 +18,7 @@ app.get('/u/:user',function(req, res){
 
 app.get('/login', function(req, res){
     //login or create account - just render
-    res.sendFile('templates/login.html', { root: __dirname });
+    res.sendFile('templates/login.html', { root: rootDir });
 });
 
 app.post('/login', function(req, res){
@@ -29,13 +30,13 @@ app.post('/login', function(req, res){
 app.get('/home', function(req, res){
     //just render the home page
     //links to logout, settings, checkin, history, resources
-    res.sendFile('templates/home.html', { root: __dirname });
+    res.sendFile('templates/home.html', { root: rootDir });
 });
 
 app.get('/settings', function(req, res){
     //render settings page
     //a lot of stuff will post here
-    res.sendFile('templates/settings.html', { root: __dirname });
+    res.sendFile('templates/settings.html', { root: rootDir });
 });
 
 app.post('/settings', function(req, res){
@@ -45,63 +46,113 @@ app.post('/settings', function(req, res){
 app.get('/logout', function(req, res){
     //logout
     //redirect to login
-    res.sendFile('templates/login.html', { root: __dirname });
+    res.sendFile('templates/login.html', { root: rootDir });
 });
 
 app.get('/history', function(req, res){
     //render the appropriate page
-    res.sendFile('templates/history.html', { root: __dirname });
+    res.sendFile('templates/history.html', { root: rootDir });
 });
 
 app.get('/resources', function(req, res){
     //just render the page
-    res.sendFile('templates/resources.html', { root: __dirname });
+    res.sendFile('templates/resources.html', { root: rootDir });
 });
 
 app.get('/checkin', function(req, res){
     //record timestamp and pre-level
     //send on to suggestions
-    res.sendFile('templates/checkin.html', { root: __dirname });
+    res.sendFile('templates/checkin.html', { root: rootDir });
 });
 
 app.get('/suggestions', function(req, res){
     //display suggestions for user and level, ordered by usage
     //send on to strategy page
-    res.sendFile('templates/suggestions.html', { root: __dirname });
+    res.sendFile('templates/suggestions.html', { root: rootDir });
 });
 
 app.get('/strat/:strategy', function(req, res){
     var strategy = req.params.strategy;
     //render strategy
     //send on to post checkin
-    res.sendFile('templates/strategy.html', { root: __dirname });
+    res.sendFile('templates/strategy.html', { root: rootDir });
 });
 
 app.get('/checkinPost', function(req, res){
     //record post score
     //send to stratEnd
-    res.sendFile('templates/checkinPost.html', { root: __dirname });
-});
-
-app.get('/stratEnd', function(req, res){
-    //render appropriate end message for score difference
-    //send to home
-    res.sendFile('templates/stratEnd.html', { root: __dirname });
+    res.sendFile('templates/checkinPost.html', { root: rootDir });
 });
 
 app.get('/newStrategy', function(req, res){
 	//render the page, 
 	//then send back to settings if they came from settings 
 	//or the checkin flow if they came from checkin
-	res.sendFile('templates/newStrategy.html', { root: __dirname });
+	res.sendFile('templates/newStrategy.html', { root: rootDir });
 });
 
 app.post('/newStrategy', function(req, res){
 	//put the info in the right places
 });
 
-app.use("/static", express.static(__dirname + '/static'));
-app.use("/assets", express.static(__dirname + '/images'));
+app.get('/editStrategies', function(req, res){
+	res.sendFile('templates/editStrategies.html', { root: rootDir});
+});
+
+app.get('/historyStrats', function(req, res){
+	res.sendFile('templates/historyStrats.html', { root: rootDir});
+});
+
+app.get('/successful', function(req, res){
+	res.sendFile('templates/successful.html', { root: rootDir});
+});
+
+app.get('/unsuccessful', function(req, res){
+	res.sendFile('templates/unsuccessful.html', { root: rootDir});
+});
+
+app.get('/moderate', function(req, res){
+	res.sendFile('templates/moderate.html', { root: rootDir});
+});
+
+app.get('/moreHelp', function(req, res){
+	res.sendFile('templates/moreHelp.html', { root: rootDir});
+});
+
+app.get('/noStress', function(req, res){
+	res.sendFile('templates/noStress.html', { root: rootDir});
+});
+
+app.get('/notifications', function(req, res){
+	res.sendFile('templates/notifications.html', { root: rootDir});
+});
+
+app.get('/talk', function(req, res){
+	res.sendFile('templates/talk.html', { root: rootDir});
+});
+
+app.get('/resources/phone', function(req, res){
+	res.sendFile('templates/resources/phoneNumbers.html', { root: rootDir});
+});
+
+app.get('/resources/chat', function(req, res){
+	res.sendFile('templates/resources/chat.html', { root: rootDir});
+});
+
+app.get('/resources/faq', function(req, res){
+	res.sendFile('templates/resources/counselingFAQ.html', { root: rootDir});
+});
+
+app.get('/resources/time', function(req, res){
+	res.sendFile('templates/resources/timeManagement.html', { root: rootDir});
+});
+
+app.get('/resources/stress', function(req, res){
+	res.sendFile('templates/resources/stressManagement.html', { root: rootDir});
+});
+
+app.use("/static", express.static(rootDir + '/static'));
+app.use("/images", express.static(rootDir + '/images'));
 
 var server = app.listen(3000, function(){
 

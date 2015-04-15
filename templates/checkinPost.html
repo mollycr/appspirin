@@ -10,20 +10,15 @@
     </head>
     <body>
  		<div class="header">
-			<img class="logo" src="static/logo.png"/>
-			<h1>History</h1>
+			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
+			<h1>Check In</h1>
 		</div>
 		Did this strategy help reduce your stress?
-		<form action="/successful"><!-- TODO this will need to post-->
-			<input type="submit" value="Yes">
-		</form>
-		<form action="/unsuccessful"><!-- TODO this will need to post-->
-			<input type="submit" value="No">
-		</form>
-		<form action="/medSuccessful"><!-- TODO this will need to post-->
-			<input type="submit" value="Kind of / Not sure">
-		</form>
-	
+
+		<a onClick="save()" class="likeabutton big" href="/successful">Yes</a>
+		<a onClick="save()" class="likeabutton big" href="/unsuccessful">No</a>
+		<a onClick="save()" class="likeabutton big" href="/moderate">Kind of/not sure</a>
+
 		<a href="/stratEnd">Save</a>
     </body>
 </html>
