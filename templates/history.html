@@ -9,49 +9,50 @@
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
  		<script src="static/cal-heatmap.min.js"></script>
-		<meta name="viewport" content="width = 380"/>
+		<meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   </head>
     <body>
         <div class="header">
 			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
 			<h1>History</h1>
 		</div>
-
-		<a class="likeabutton current" href="#">Trends</a>
-		<a class="likeabutton" href="historyStrats">Strategies</a>
+		<div class="wrapper">
+			<a class="likeabutton current" href="#">Trends</a>
+			<a class="likeabutton" href="historyStrats">Strategies</a>
 	
-		<div id="cal-heatmap"></div>
-		<script type="text/javascript">
-			var cal = new CalHeatMap();
-			cal.init({
-				data: { "1428256251":1, "1428356251":2, "1428456251":3, "1428542651":4},
-				id: "graph_k",
-				domain: "month",
-				subDomain: "x_day",
-				range: 1,
-				cellSize: 30,
-				cellPadding: 5,
-				cellRadius: 5,
-				domainGutter: 10,
-				subDomainTextFormat: "%d",
-				weekStartOnMonday: false,
-				legend: [0.5, 1.5, 2.5, 3.5, 4.5, 5.5]
-			});
-		</script>
-
-		<div class="textbox">
-			<p>
-			Now, this is a story all about how</br>
-			My life got flipped-turned upside down</br>
-			And I'd like to take a minute</br>
-			Just sit right there</br>
-			I'll tell you how I became the prince of a town called Bel Air
-			</p>
+			<div id="cal-heatmap"></div>
+			<script type="text/javascript">
+				var cal = new CalHeatMap();
+				cal.init({
+					data: { "1428256251":1, "1428356251":2, "1428456251":3, "1428542651":4},
+					id: "graph_k",
+					domain: "month",
+					subDomain: "x_day",
+					range: 1,
+					cellSize: 30,
+					cellPadding: 5,
+					cellRadius: 5,
+					domainGutter: 10,
+					subDomainTextFormat: "%d",
+					weekStartOnMonday: false,
+					legend: [0.5, 1.5, 2.5, 3.5, 4.5]
+				});
+			</script>
+	
+			<div class="textbox">
+				<p>
+				Now, this is a story all about how</br>
+				My life got flipped-turned upside down</br>
+				And I'd like to take a minute</br>
+				Just sit right there</br>
+				I'll tell you how I became the prince of a town called Bel Air
+				</p>
+			</div>
+			
+			<a href="#" onclick = "prevMonth()" class="arrow prev">#</a>
+			<a href="#" onclick = "nextMonth()" class="arrow next">#</a>
 		</div>
-		
-		<a href="#" onclick = "prevMonth()" class="arrow prev">#</a>
-		<a href="#" onclick = "nextMonth()" class="arrow next">#</a>
-
     </body>
 </html>

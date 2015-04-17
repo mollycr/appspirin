@@ -1,0 +1,19 @@
+.container{
+	display: block;
+	width: 120px;
+	text-decoration: none;
+	float: left;
+	margin: 20px 10px 20px 10px;
+	text-align: center;
+	color: #666;
+}
+
+.bigIcon{
+	border-radius: 10px;
+	width: 120px;
+}
+
+.logout{
+	float: right;
+	margin-top: 40px;
+}

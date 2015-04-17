@@ -5,21 +5,34 @@
         <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
         <link type="text/css" rel="stylesheet" href="static/css/home.css">
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-        <meta name="viewport" content="width = 380"/>
+        <meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    </head>
+ <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+   </head>
     <body>
 		<div class="header">
 			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
 			<h1>Appspirin</h1>
 		</div>
+		<div class="wrapper">
 
-
-        <a class="button" href="/checkin">Check In</a>
-        <a class="button" href="/history">History</a>
-        <a class="button" href="/resources">Resources</a>
-        <a class="button subtle" href="/settings">Settings</a>
-        <a class="button subtle" href="/logout">Logout</a>
-	
+	        <a class="container" href="/checkin">
+				<img class="bigIcon" src="/images/checkin.png"/>
+				Check In
+			</a>
+			<a class="container" href="/history">
+				<img class="bigIcon" src="/images/history.png"/>
+				History
+			</a>
+			<a class="container" href="/resources">
+				<img class="bigIcon" src="/images/resources.png"/>
+				Resources
+			</a>
+			<a class="container" href="/settings">
+				<img class="bigIcon" src="/images/settings.png"/>
+				Settings
+			</a>
+   	     <a class="logout" href="/logout">Logout</a>
+		</div>	
     </body>
 </html>

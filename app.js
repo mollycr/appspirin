@@ -25,6 +25,15 @@ app.post('/login', function(req, res){
     //is it a login or a create?
     //if it's a create, make a new user object, new email in the cron job and redirect to home
     //if it's a login, load the user appropriately (probably sessions) and redirect to home
+	res.sendFile('templates/home.html', { root: rootDir });
+});
+
+app.get('/createAccount', function(req, res){
+	res.sendFile('templates/newAccount.html', {root: rootDir });
+});
+
+app.post('/createAccount', function(req, res){
+	res.sendFile('templates/home.html', {root: rootDir });
 });
 
 app.get('/home', function(req, res){
@@ -65,7 +74,7 @@ app.get('/checkin', function(req, res){
     res.sendFile('templates/checkin.html', { root: rootDir });
 });
 
-app.get('/suggestions', function(req, res){
+app.post('/checkin', function(req, res){
     //display suggestions for user and level, ordered by usage
     //send on to strategy page
     res.sendFile('templates/suggestions.html', { root: rootDir });

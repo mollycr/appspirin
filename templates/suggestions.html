@@ -5,28 +5,30 @@
         <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
         <link type="text/css" rel="stylesheet" href="static/css/suggestions.css">
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-        <meta name="viewport" content="width = 380"/>
+        <meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
     </head>
     <body>
 		<div class="header">
-			<a href="/home"<img class="logo" src="/images/logo.png"/></a>
+			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
 			<h1>De-Stress</h1>
 		</div>
+		<div class="wrapper">
+			<div class="stratBox">
+		        <a class="link" href="/newStrategy">+ Add a strategy</a>
+				<div class="scrollable" ng-repeat="ID, title in strats">
+					<div class="stratCard">
+						<img class="stratIcon" src="static/images/icons/{{category}}.png"/>
+		        	    <a class="stratTitle" href="/strats/{{ID}}">{{title}}</a>
+			 	</div>
+			</div>
 
-		<div class="stratBox">
-	        <a class="link" href="/newStrategy">+ Add a strategy</a>
-    	    <div class="scrollable" ng-repeat="ID, title in strats">
-				<div class="stratCard">
-					<img class="stratIcon" src="static/images/icons/{{category}}.png"/>
-	        	    <a class="stratTitle" href="/strats/{{ID}}">{{title}}</a>
-        	</div>
+			<div classs="textbox">
+				Meditation is a great way to reduce stress and increase concentration. I have a headache and I pretty much need to be coding and nothing else for the next two weeks.
+			</div>
+			<a class="likeabutton" href="/strat/temporary">Continue</a>
 		</div>
-
-		<div classs="textbox">
-			Meditation is a great way to reduce stress and increase concentration. I have a headache and I pretty much need to be coding and nothing else for the next two weeks.
-		</div>
-		<a class="link" href="/strat/temporary">Continue</a>
     </body>
 </html>

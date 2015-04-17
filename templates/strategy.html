@@ -2,20 +2,29 @@
 <html>
     <head>
         <title>Strategy</title>
-        <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
-        <link type="text/css" rel="stylesheet" href="static/css/strategy.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/appspirin.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/strategy.css">
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-        <meta name="viewport" content="width = 380"/>
+        <meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
     </head>
     <body>
         <div class="header">
 			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
-			<h1>{{title}}</h1>
+			<h1>Meditation</h1>
 		</div>
-		{{description}}
-		{{media}}
-		<a class="likeabutton" href="/checkinPost">Continue</a>
+		<div class="wrapper">
+			<div class="description">
+				Sit somewhere quiet and comfortable, and plug in headphones.
+				Close your eyes, breathe slowly, and listen to this guided meditation.
+			</div>
+			<audio controls>
+				<source src="/static/med1.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
+			<a class="likeabutton" href="/checkinPost">Continue</a>
+		</div>
     </body>
 </html>

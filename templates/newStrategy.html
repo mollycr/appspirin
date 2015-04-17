@@ -5,8 +5,9 @@
         <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
         <link type="text/css" rel="stylesheet" href="static/css/newStrat.css">
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-        <meta name="viewport" content="width = 380"/>
+        <meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
     </head>
     <body>
@@ -14,15 +15,14 @@
 			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
 			<h1>New Strategy</h1>
 		</div>
-
-		<h2> Add a new strategy</h2>
-		<form action="/newStrategy" method="post">
-			<input type="text" placeholder="Value"/>
-			<input type="text" placeholder="Description"/>
-			<label>Time (minutes)<input type="number"></label>
-			<input type="submit" value="Save" >
-		</form>
-		</br>
-		Back to <a href="/strat/new">Strategy</a> or <a href="/settings">Settings</a>
+		<div class="wrapper">
+			<h2> Add a new strategy</h2>
+			<form action="/newStrategy" method="post">
+				<input type="text" placeholder="Value"/>
+				<input type="text" placeholder="Description"/>
+				<label>Time (minutes)<input type="number"></label>
+				<input class="likeabutton" type="submit" value="Save" >
+			</form>
+		</div>
     </body>
 </html>

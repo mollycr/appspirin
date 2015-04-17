@@ -6,8 +6,10 @@
         <link type="text/css" rel="stylesheet" href="static/css/checkin.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-        <meta name="viewport" content="width = 380"/>
+        <meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
    </head>
     <body>
 		<div class="header">
@@ -15,37 +17,38 @@
 			<h1>Check In</h1>
 		</div>
 
-		<h2> Select your stress level:</h2>
+		<div class="wrapper">
+			<h2> Select your stress level:</h2>
 			
-       	<form method="post" action="/checkin">
-			<label>
-				<input type="radio" name="stress" value="0" />
-				<img src="images/pain-0.png">
-			</label>
-			<label>
-				<input type="radio" name="stress" value="1" />
-				<img src="images/pain-1.png">
-			</label>
-			<label>
-				<input type="radio" name="stress" value="2" />
-				<img src="images/pain-2.png">
-			</label>
-			<label>
-				<input type="radio" name="stress" value="3" />
-				<img src="images/pain-3.png">
-			</label>
-			<label>
-				<input type="radio" name="stress" value="4" />
-				<img src="images/pain-4.png">
-			</label>
-			<label>
-				<input type="radio" name="stress" value="5" />
-				<img src="images/pain-5.png">
-			</label>
-			
-			<input type="textarea" rows="30" cols="8"  name ="post" placeholder="What's going on today?"/>
-			<button type="submit">Check In</button>
-		</form>
-		<a href="/suggestions">Check In</a>
+       		<form method="post" action="/checkin">
+				<label>
+					<input type="radio" name="stress" value="0" />
+					<img src="images/pain-0.png">
+				</label>
+				<label>
+					<input type="radio" name="stress" value="1" />
+					<img src="images/pain-1.png">
+				</label>
+				<label>
+					<input type="radio" name="stress" value="2" />
+					<img src="images/pain-2.png">
+				</label>
+				<label>
+					<input type="radio" name="stress" value="3" />
+					<img src="images/pain-3.png">
+				</label>
+				<label>
+					<input type="radio" name="stress" value="4" />
+					<img src="images/pain-4.png">
+				</label>
+				<label>
+					<input type="radio" name="stress" value="5" />
+					<img src="images/pain-5.png">
+				</label>
+				
+				<input type="textarea" rows="30" cols="8"  name ="post" placeholder="What's going on today?"/>
+				<button type="submit">Check In</button>
+			</form>
+		</div>
     </body>
 </html>
