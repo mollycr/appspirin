@@ -11,22 +11,64 @@
 
     </head>
     <body>
+		<script type="text/javascript">
+			var MyApp = angular.module('MyApp', [])
+			.controller('stratController', function($scope) {
+				$scope.strats = [
+					{
+						ID:0,
+						title:"Meditate",
+						description:"Listen to a guided meditation to help focus yourself.",
+						category:"emotional"
+					},
+					{
+						ID:1,
+						title:"Take a walk",
+						description:"We'll recommend some good routes",
+						category:"physical"
+					},
+					{
+						ID:2,
+						title:"Talk to someone",
+						description:"Talk to a friend or a professional",
+						category:"interpersonal"
+					},
+					{
+						ID:3,
+						title:"Thought distancing",
+						description:"Thought distancing is a technique to quiet fears or intrusive thoughts",
+						category:"emotional"
+					},
+					{
+						ID:4,
+						title:"Video games",
+						description:"We'll set a timer for half an hour of your favorite video game.",
+						category:"fun"
+					}
+				];
+				
+				$scope.switchDesc = function(strat){
+					document.getElementById("changeme").innerHTML = strat.description;
+				};
+
+			});
+		</script>
 		<div class="header">
 			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
 			<h1>De-Stress</h1>
 		</div>
 		<div class="wrapper">
-			<div class="stratBox">
+			<div ng-app="MyApp" ng-controller="stratController" class="stratBox">
 		        <a class="link" href="/newStrategy">+ Add a strategy</a>
-				<div class="scrollable" ng-repeat="ID, title in strats">
+				<div class="scrollable" ng-repeat="strat in strats" ng-click="switchDesc(strat)">
 					<div class="stratCard">
-						<img class="stratIcon" src="static/images/icons/{{category}}.png"/>
-		        	    <a class="stratTitle" href="/strats/{{ID}}">{{title}}</a>
+						<img class="stratIcon" src="/images/{{strat.category}}.png"/>
+		        	    {{strat.title}}
 			 	</div>
 			</div>
 
-			<div classs="textbox">
-				Meditation is a great way to reduce stress and increase concentration. I have a headache and I pretty much need to be coding and nothing else for the next two weeks.
+			<div id="changeme" class="textbox">
+				Select a strategy.
 			</div>
 			<a class="likeabutton" href="/strat/temporary">Continue</a>
 		</div>
