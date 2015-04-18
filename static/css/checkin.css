@@ -2,9 +2,20 @@ label > input{ /* HIDE RADIO */
   display:none;
 }
 label > input + img{ /* IMAGE STYLES */
-  cursor:pointer;
   border:2px solid transparent;
 }
 label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
-  border:2px solid #f00;
+  border:2px solid #ff6633;
+  border-radius: 20px;
+}
+
+img{
+	width: 65px;
+	margin: 0 10px 15px 10px;
+}
+
+.diary{
+	width: 100%;
+	height: 100px;
+	font-family: 'Raleway';
 }

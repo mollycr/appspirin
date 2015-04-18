@@ -102,10 +102,16 @@ app.get('/newStrategy', function(req, res){
 
 app.post('/newStrategy', function(req, res){
 	//put the info in the right places
+	//route back to settings
+	res.sendFile('templates/editStrategies.html', { root: rootDir});
 });
 
 app.get('/editStrategies', function(req, res){
 	res.sendFile('templates/editStrategies.html', { root: rootDir});
+});
+
+app.post('/editStrategies', function(req, res){
+	res.sendFile('templates/settings.html', { root: rootDir});
 });
 
 app.get('/historyStrats', function(req, res){

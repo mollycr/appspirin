@@ -68,6 +68,8 @@ body{
 	white-space: nowrap;
 	border: none;
 	margin: 30px 0 0 0;
+	display: block;
+	text-align: center;
 }
 
 .header {
