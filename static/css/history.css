@@ -1,0 +1,13 @@
+.bar{
+	width: 50%;
+	//sure is nice to not have to make anything that even pretends to be extensible.
+	font-size: 12px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+}
+
+.selected{
+	opacity: 50;
+}
