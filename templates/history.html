@@ -31,16 +31,20 @@
 					domain: "month",
 					subDomain: "x_day",
 					range: 1,
-					cellSize: 30,
+					cellSize: 35,
 					cellPadding: 5,
 					cellRadius: 5,
 					domainGutter: 10,
 					subDomainTextFormat: "%d",
 					weekStartOnMonday: false,
+					displayLegend: false,
 					legend: [0.5, 1.5, 2.5, 3.5, 4.5]
 				});
 			</script>
-	
+
+			<a href="#" onclick = "prevMonth()"><img class="arrow left" src="/images/prev.png"/></a>
+			<a href="#" onclick = "nextMonth()"><img class="arrow right" src="/images/next.png"/></a>
+
 			<div class="textbox">
 				<p>
 				Now, this is a story all about how</br>
@@ -51,8 +55,7 @@
 				</p>
 			</div>
 			
-			<a href="#" onclick = "prevMonth()" class="arrow prev">#</a>
-			<a href="#" onclick = "nextMonth()" class="arrow next">#</a>
+
 		</div>
     </body>
 </html>

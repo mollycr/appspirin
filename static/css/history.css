@@ -3,11 +3,37 @@
 	//sure is nice to not have to make anything that even pretends to be extensible.
 	font-size: 12px;
 	float: left;
-	margin: 0;
+	margin: -10px 0 20px 0;;
 	padding: 0;
-	border-radius: 0;
+	border-radius: 2px;
+	font-size: 18px;
 }
 
 .selected{
-	opacity: 50;
+	background-color: #6cc;
+}
+
+.textbox{
+	background-color: #fff;
+	width: 100%;
+	height: 125px;
+	overflow: scroll;
+	border: solid 1px #666;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.arrow{
+	width: 40px;
+	margin-top: -50px;
+}
+
+.right{
+	float: right;
+}
+
+.left{
+	float: left;
 }
