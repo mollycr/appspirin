@@ -1,0 +1,23 @@
+.resIcon{
+	width: 60px;
+	float: left;
+	margin-right: 10px;
+}
+
+.resCard{
+	background-color: #fff;
+	border-radius: 5px;
+	margin-bottom: 25px;
+	border: none;
+	overflow: hidden;
+}
+
+a{
+	text-decoration: none;
+}
+
+.label{
+	margin: 10px;
+	color: #000;
+	font-size: 20px;
+}
