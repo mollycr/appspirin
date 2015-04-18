@@ -1,0 +1,35 @@
+.scrollable{
+	height: 260px;
+	overflow: scroll;
+	border: 2px solid #666;
+	background-color: #666;
+}
+
+.stratCard{
+	background-color: #fff;
+	border: 2px solid #666;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+.stratIcon{
+	height: 50px;
+	margin-left: 5px;
+}
+
+.selected{
+	background-color: #cc6666;
+}
+
+.likeabutton{
+	margin-top: 20px;
+}
+
+.textbox{
+	margin-top: 15px;
+	background-color: #fff;
+	border: 2px solid #666;
+	border-radius: 5px;
+	padding: 5px;
+	height: 75px;
+}

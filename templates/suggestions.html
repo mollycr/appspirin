@@ -19,36 +19,46 @@
 						ID:0,
 						title:"Meditate",
 						description:"Listen to a guided meditation to help focus yourself.",
-						category:"emotional"
+						category:"emotional",
+						selected: false
 					},
 					{
 						ID:1,
 						title:"Take a walk",
 						description:"We'll recommend some good routes",
-						category:"physical"
+						category:"physical",
+						selected: false
 					},
 					{
 						ID:2,
 						title:"Talk to someone",
 						description:"Talk to a friend or a professional",
-						category:"interpersonal"
+						category:"interpersonal",
+						selected: false
 					},
 					{
 						ID:3,
 						title:"Thought distancing",
 						description:"Thought distancing is a technique to quiet fears or intrusive thoughts",
-						category:"emotional"
+						category:"emotional",
+						selected: false
 					},
 					{
 						ID:4,
 						title:"Video games",
 						description:"We'll set a timer for half an hour of your favorite video game.",
-						category:"fun"
+						category:"fun",
+						selected: false
 					}
 				];
 				
 				$scope.switchDesc = function(strat){
 					document.getElementById("changeme").innerHTML = strat.description;
+					strat.selected = true;
+					if($scope.lastPicked){
+						$scope.lastPicked.selected = false;
+					}
+					$scope.lastPicked=strat;
 				};
 
 			});
@@ -59,11 +69,11 @@
 		</div>
 		<div class="wrapper">
 			<div ng-app="MyApp" ng-controller="stratController" class="stratBox">
-		        <a class="link" href="/newStrategy">+ Add a strategy</a>
-				<div class="scrollable" ng-repeat="strat in strats" ng-click="switchDesc(strat)">
-					<div class="stratCard">
+				<div class="scrollable">
+					<div class="stratCard" ng-class="{selected:strat.selected}" ng-repeat="strat in strats" ng-click="switchDesc(strat)">
 						<img class="stratIcon" src="/images/{{strat.category}}.png"/>
 		        	    {{strat.title}}
+					</div>
 			 	</div>
 			</div>
 
