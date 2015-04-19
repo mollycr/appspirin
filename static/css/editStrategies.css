@@ -5,13 +5,35 @@
 
 input[type='checkbox'] {
     -webkit-appearance:none;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     background:white;
     border-radius:5px;
     border:2px solid #555;
+	float: left;
 }
+
 input[type='checkbox']:checked {
-    background: #abd;
-	/*TODO put an image in there*/
+    background-image: url("/images/check.png");
+}
+
+.scrollable{
+	margin-top: 20px;
+	height: 260px;
+	overflow: scroll;
+	border: 2px solid #666;
+	background-color: #666;
+}
+
+.stratCard{
+	background-color: #fff;
+	border: 2px solid #666;
+	border-radius: 5px;
+	font-size: 20px;
+	height: 50px;
+}
+
+.title{
+	float: left;
+	margin: 15px 0 0 5px;
 }

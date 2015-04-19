@@ -1,0 +1,22 @@
+.likeabutton{
+	float: right;
+}
+
+input, .desc{
+	background-color: #fff;
+	border: 1px solid #666;
+	border-radius: 5px;
+	font-size: 18px;
+	width: 270px;
+	margin-bottom: 10px;
+	padding: 5px;
+	font-family: 'Raleway';
+}
+
+.desc{
+	height: 100px;
+}
+
+.desc{
+	height: 
+}
