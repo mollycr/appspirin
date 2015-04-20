@@ -38,14 +38,20 @@
 					subDomainTextFormat: "%d",
 					weekStartOnMonday: false,
 					displayLegend: false,
-					legend: [0.5, 1.5, 2.5, 3.5, 4.5]
+					legend: [0.5, 1.5, 2.5, 3.5, 4.5],
+					onClick: function(date, nb) {
+						$("#onClick-placeholder").html("You just clicked <br/>on <b>" +
+							date + "</b> <br/>with <b>" +
+							(nb === null ? "unknown" : nb) + "</b> items"
+						);
+					}
 				});
 			</script>
 
 			<a href="#" onclick = "prevMonth()"><img class="arrow left" src="/images/prev.png"/></a>
 			<a href="#" onclick = "nextMonth()"><img class="arrow right" src="/images/next.png"/></a>
 
-			<div class="textbox">
+			<div class="textbox" id="onClick-placeholder">
 				<p>
 				Now, this is a story all about how</br>
 				My life got flipped-turned upside down</br>
