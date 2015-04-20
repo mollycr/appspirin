@@ -10,15 +10,67 @@
  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
    </head>
     <body>
+		<script type="text/javascript">
+			var MyApp = angular.module('MyApp', [])
+			.controller('stratController', function($scope) {
+				$scope.strats = [
+					{
+						ID:0,
+						title:"Meditate",
+						description:"Listen to a guided meditation to help focus yourself.",
+						category:"emotional",
+						selected: false
+					},
+					{
+						ID:1,
+						title:"Take a walk",
+						description:"We'll recommend some good routes",
+						category:"physical",
+						selected: false
+					},
+					{
+						ID:2,
+						title:"Talk to someone",
+						description:"Talk to a friend or a professional",
+						category:"interpersonal",
+						selected: false
+					},
+					{
+						ID:3,
+						title:"Thought distancing",
+						description:"Thought distancing is a technique to quiet fears or intrusive thoughts",
+						category:"emotional",
+						selected: false
+					},
+					{
+						ID:4,
+						title:"Video games",
+						description:"We'll set a timer for half an hour of your favorite video game.",
+						category:"fun",
+						selected: false
+					}
+				];
+			});
+		</script>
+
         <div class="header">
 			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
 			<h1>History</h1>
 		</div>
 		<div class="wrapper">
+			<a class="likeabutton bar selected" href="#">Trends</a>
+			<a class="likeabutton bar" href="historyStrats">Strategies</a>
 
-			button bar
-
-			table of methods and scores
+			<table ng-app="MyApp" ng-controller="stratController" class="stratBox scrollable">
+				<tr>
+					<th>Strategy</th>
+					<th>Percent success</th>
+				</tr>
+				<tr ng-repeat="strat in strats">
+	        	    <td>{{strat.title}}</td>
+					<td>75%</td>
+				</tr>
+		 	</table>
 		</div>
     </body>
 </html>

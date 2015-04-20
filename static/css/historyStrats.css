@@ -1,0 +1,28 @@
+.bar{
+	width: 50%;
+	//sure is nice to not have to make anything that even pretends to be extensible.
+	font-size: 12px;
+	float: left;
+	margin: -10px 0 20px 0;;
+	padding: 0;
+	border-radius: 2px;
+	font-size: 18px;
+}
+
+.selected{
+	background-color: #6cc;
+}
+
+tr{
+	
+}
+
+td{
+	padding: 5px;
+}
+
+th{
+	font-weight: bold;
+	text-align: left;
+	padding: 5px;
+}
