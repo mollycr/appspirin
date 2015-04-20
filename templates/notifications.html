@@ -3,7 +3,7 @@
     <head>
         <title>Notifications</title>
         <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
-        <link type="text/css" rel="stylesheet" href="static/css/{{CSS}}">
+        <link type="text/css" rel="stylesheet" href="static/css/notifications.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
         <meta name="viewport" content="width = 320"/>
@@ -16,9 +16,27 @@
 			<h1>Settings</h1>
 		</div>
 		<div class="wrapper">	
-			<h2>Edit notifications</h2>
+			<h2>Notifications:</h2>
 
-			TODO
+			<form method="post" action="/notifications">
+				<div class="seperate">
+					<div class="select"><input type="radio" checked="true" name="frequency" value="all"/> Every day</div>
+					<div class="select"><input type="radio" name="frequency" value="some"/> These days:</div>
+					<div class="days">
+						<label><input class="day" type="checkbox" name="day" value="sun"/><span>Su</span></label>
+						<label><input class="day" type="checkbox" name="day" value="mon"/><span>Mo</span></label>
+						<label><input class="day" type="checkbox" name="day" value="tue"/><span>Tu</span></label>
+						<label><input class="day" type="checkbox" name="day" value="wed"/><span>We</span></label>
+						<label><input class="day" type="checkbox" name="day" value="thu"/><span>Th</span></label>
+						<label><input class="day" type="checkbox" name="day" value="fri"/><span>Fr</span></label>
+						<label><input class="day" type="checkbox" name="day" value="sat"/><span>Sa</span></label>
+					</div>
+				</div>
+				<div class="seperate">
+					<div class="select"> <input type="radio" checked="true" name="time" value="morning"/>In the morning</div>
+					<div class="select"><input type="radio" name="time" value="evening"/>In the evening</div>
+				</div>
+			</form>
 
 			<a class="likeabutton" href="/settings">Save</a>
 		</div>

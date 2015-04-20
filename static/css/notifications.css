@@ -1,0 +1,42 @@
+.days {
+    margin: 15px 0 125px 30px;
+	font-size: 30px;
+}
+
+.days label {
+    float:left;
+    width:1.9em;
+	height: 1.3em;
+}
+
+.days label span {
+    text-align:center;
+    padding:0;
+    display:block;
+	width: 1.75em;
+	height: 1.1em;
+	background-color: #ccc;
+	border: none;
+	border-radius: 3px;
+}
+
+.days label input {
+    position:absolute;
+    top:-20px;
+}
+
+.days input:checked + span {
+    background-color:#911;
+    color:#fff;
+}
+
+
+.seperate{
+	width: 100%;
+	clear: both;
+}
+
+.select{
+	width: 100%;
+	margin-bottom: 5px;
+}
