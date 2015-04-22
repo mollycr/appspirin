@@ -71,7 +71,7 @@
 			<div ng-app="MyApp" ng-controller="stratController" class="stratBox scrollable">
 				<div class="stratCard" ng-class="{selected:strat.selected}" ng-repeat="strat in strats" ng-click="switchDesc(strat)">
 					<img class="stratIcon" src="/images/{{strat.category}}.png"/>
-	        	    {{strat.title}}
+	        	    <span class="title">{{strat.title}}</span>
 				</div>
 		 	</div>
 

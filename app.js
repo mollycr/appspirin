@@ -80,6 +80,10 @@ app.post('/checkin', function(req, res){
     res.sendFile('templates/suggestions.html', { root: rootDir });
 });
 
+app.get('/strategies', function(req, res){
+	res.sendFile('templates/suggestions.html', { root: rootDir });
+});
+
 app.get('/strat/:strategy', function(req, res){
     var strategy = req.params.strategy;
     //render strategy
