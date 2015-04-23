@@ -1,76 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>History</title>
-        <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
-        <link type="text/css" rel="stylesheet" href="static/css/historyStrats.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
- 		<meta name="viewport" content="width = 320"/>
+	<head>
+		<title>History</title>
+		<link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
+		<link type="text/css" rel="stylesheet" href="static/css/historyStrats.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+		<script src="http://code.highcharts.com/highcharts.js"></script> 
+		<meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
    </head>
-    <body>
+	<body>	
 		<script type="text/javascript">
-			var MyApp = angular.module('MyApp', [])
-			.controller('stratController', function($scope) {
-				$scope.strats = [
-					{
-						ID:0,
-						title:"Meditate",
-						description:"Listen to a guided meditation to help focus yourself.",
-						category:"emotional",
-						selected: false
+			$(function () {
+				$('#container').highcharts({
+					chart: {
+						type: 'bar'
 					},
-					{
-						ID:1,
-						title:"Take a walk",
-						description:"We'll recommend some good routes",
-						category:"physical",
-						selected: false
+					plotOptions: {
+						series: {
+							color: '#339999'
+						}
 					},
-					{
-						ID:2,
-						title:"Talk to someone",
-						description:"Talk to a friend or a professional",
-						category:"interpersonal",
-						selected: false
-					},
-					{
-						ID:3,
-						title:"Thought distancing",
-						description:"Thought distancing is a technique to quiet fears or intrusive thoughts",
-						category:"emotional",
-						selected: false
-					},
-					{
-						ID:4,
-						title:"Video games",
-						description:"We'll set a timer for half an hour of your favorite video game.",
-						category:"fun",
-						selected: false
-					}
-				];
-			});
+					title: {
+						text: null
+						},
+						xAxis: {
+							categories: ['Meditate', 'Take a walk', 'Talk to someone', 'Thought distance', 'Video games'],
+							title: {
+								text: null
+							}
+						},
+						yAxis: {
+							title: {
+								text: "Successful uses"
+							},
+							allowDecimals: false
+						},
+						credits: {
+							enabled: false
+						},
+						legend: {
+							enabled: false
+						},
+						series: [{
+							data: [7, 5, 1, 1, 1]
+						}]
+					});
+				});
 		</script>
 
-        <div class="header">
+		<div class="header">
 			<a href="/home"><img class="logo" src="/images/logo.png"/></a>
 			<h1>History</h1>
 		</div>
 		<div class="wrapper">
 			<a class="likeabutton bar" href="history">Trends</a>
 			<a class="likeabutton bar selected" href="historyStrats">Strategies</a>
+			<div id="container"></div>
 
-			<table ng-app="MyApp" ng-controller="stratController" class="stratBox scrollable">
-				<tr>
-					<th>Strategy</th>
-					<th>Percent success</th>
-				</tr>
-				<tr ng-repeat="strat in strats">
-	        	    <td>{{strat.title}}</td>
-					<td>75%</td>
-				</tr>
-		 	</table>
 		</div>
-    </body>
+	</body>
 </html>
