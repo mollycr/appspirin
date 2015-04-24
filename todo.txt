@@ -1,0 +1,4 @@
+make the resources real
+make add/delete work within a session
+put in diary entries
+make moreHelp and noStress happen

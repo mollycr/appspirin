@@ -1,6 +1,9 @@
 var express = require('express');
+var favicon = require('serve-favicon');
 var app = express();
 var rootDir = "/home/mrobison/appspirin";
+
+app.use(favicon(__dirname + '/images/favicon.ico'));
 
 app.get('/', function(req, res){
     //show splash screen for n seconds

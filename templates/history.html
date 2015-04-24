@@ -14,7 +14,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   </head>
     <body>
-        <div class="header">
+ 		       <div class="header">
 			<a href="/home"><img class="logo" src="/images/home.png"/></a>
 			<h1>History</h1>
 		</div>
@@ -40,6 +40,9 @@
 					displayLegend: false,
 					legend: [0.5, 1.5, 2.5, 3.5, 4.5],
 					onClick: function(date, nb) {
+						//this needs to take the seconds-from-epoch timestamp of the
+						//day that was clicked on, and fill in #onClick-placeholder
+						//with the corresponding diary entry from static/diary.json
 						$("#onClick-placeholder").html("You just clicked <br/>on <b>" +
 							date + "</b> <br/>with <b>" +
 							(nb === null ? "unknown" : nb) + "</b> items"
@@ -50,6 +53,16 @@
 
 			<a href="#" onclick = "prevMonth()"><img class="arrow left" src="/images/prev.png"/></a>
 			<a href="#" onclick = "nextMonth()"><img class="arrow right" src="/images/next.png"/></a>
+
+			<!-- this won't end well -->
+			<div class="legend">
+				<div class="box q1">0</div>
+				<div class="box q2">1</div>
+				<div class="box q3">2</div>
+				<div class="box q4">3</div>
+				<div class="box q5">4</div>
+				<div class="box q6">5</div>
+			</div>
 
 			<div class="textbox" id="onClick-placeholder">
 				

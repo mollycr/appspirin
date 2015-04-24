@@ -20,3 +20,12 @@ input, .desc{
 .desc{
 	height: 
 }
+
+select{
+	width: 100%;
+	font-size: 18px;
+	border-radius: 5px;
+	color: #999;
+	font-family: 'Raleway';
+	border: 1px solid #666;
+}

@@ -11,7 +11,7 @@ json.write("{")
 
 x = 29
 while(x>0):
-	json.write('"' + str(start) + '":' + str(randint(0,5)) + ',')
+	json.write('"' + str(start) + '":' + str(randint(0,5)) + ',\n')
 	start = start + day
 	x = x-1
 

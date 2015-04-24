@@ -1,17 +1,16 @@
-label > input{ /* HIDE RADIO */
+label > .wrap > input{ /* HIDE RADIO */
   display:none;
 }
-label > input + img{ /* IMAGE STYLES */
+label > .wrap > input + img{ /* IMAGE STYLES */
   border:2px solid transparent;
 }
-label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+label > .wrap > input:checked + img{ /* (CHECKED) IMAGE STYLES */
   border:2px solid #ff6633;
   border-radius: 20px;
 }
 
 img{
 	width: 65px;
-	margin: 0 10px 15px 10px;
 }
 
 .diary{
@@ -24,4 +23,16 @@ img{
 .likeabutton{
 	//pressed for the very first time
 	float: right;
+}
+
+.number{
+	display: block;
+	font-size: 12px;
+	margin-left: 30px;
+}
+
+.wrap{
+	width: 65px;
+	float: left;
+	margin: 0 10px 20px 10px;
 }

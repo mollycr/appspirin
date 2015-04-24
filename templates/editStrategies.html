@@ -12,44 +12,11 @@
     <body>
 		<script type="text/javascript">
 			var MyApp = angular.module('MyApp', [])
-			.controller('stratController', function($scope) {
-				$scope.strats = [
-					{
-						ID:0,
-						title:"Meditate",
-						description:"Listen to a guided meditation to help focus yourself.",
-						category:"emotional",
-						selected: false
-					},
-					{
-						ID:1,
-						title:"Take a walk",
-						description:"We'll recommend some good routes",
-						category:"physical",
-						selected: false
-					},
-					{
-						ID:2,
-						title:"Talk to someone",
-						description:"Talk to a friend or a professional",
-						category:"interpersonal",
-						selected: false
-					},
-					{
-						ID:3,
-						title:"Thought distancing",
-						description:"Thought distancing is a technique to quiet fears or intrusive thoughts",
-						category:"emotional",
-						selected: false
-					},
-					{
-						ID:4,
-						title:"Video games",
-						description:"We'll set a timer for half an hour of your favorite video game.",
-						category:"fun",
-						selected: false
-					}
-				];
+			.controller('stratController', function($scope, $http) {
+				$http.get("static/strategies.json")
+				.then(function(response) {
+					$scope.strats = response.data;
+				});
 
 			});
 		</script>

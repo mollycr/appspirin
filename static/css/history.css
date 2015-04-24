@@ -22,7 +22,7 @@
 	border-radius: 5px;
 	padding: 5px;
 	font-size: 18px;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .arrow{
@@ -36,4 +36,42 @@
 
 .left{
 	float: left;
+}
+
+.legend{
+	width: 100px;;
+	margin: 0 auto;
+}
+
+.box{
+	float: left;
+	width: 12px;
+	height: 12px;
+	border-radius: 3px;
+	font-size: 12px;
+	margin-right: 3px;
+}
+
+.q1{
+	background-color: #fff;
+}
+
+.q2{
+	background-color: #ffcc99;
+}
+
+.q3{
+	background-color: #ff9966;
+}
+
+.q4{
+	background-color: #ff6633;
+}
+
+.q5{
+	background-color: #cc6633;
+}
+
+.q6{
+	background-color: #cc3300;
 }

@@ -1,0 +1,71 @@
+[
+{
+	"ID":0,
+	"title":"Meditate",
+	"description":"Listen to a guided meditation to help focus yourself.",
+	"category":"emotional",
+	"selected": false
+},
+{
+	"ID":1,
+	"title":"Take a walk",
+	"description":"We'll recommend some good routes",
+	"category":"physical",
+	"selected": false
+},
+{
+	"ID":2,
+	"title":"Talk to someone",
+	"description":"Talk to a friend or a professional",
+	"category":"interpersonal",
+	"selected": false
+},
+{
+	"ID":3,
+	"title":"Thought distancing",
+	"description":"Thought distancing is a technique to quiet fears or intrusive thoughts",
+	"category":"emotional",
+	"selected": false
+},
+{
+	"ID":4,
+	"title":"Video games",
+	"description":"We'll set a timer for half an hour of your favorite video game.",
+	"category":"fun",
+	"selected": false
+},
+{
+	"ID":5,
+	"title":"Get lunch",
+	"description":"Make plans to meet a friend for lunch.",
+	"category":"interpersonal",
+	"selected": false
+},
+{
+	"ID":6,
+	"title":"Journal",
+	"description":"Take 15 minutes to write about what's going on in your life.",
+	"category":"emotional",
+	"selected": false
+},
+{
+	"ID":7,
+	"title":"Exercise",
+	"description":"Do 15 minutes of your favorite form of exercise.",
+	"category":"physical",
+	"selected": false
+},
+{
+	"ID":8,
+	"title":"Watch TV",
+	"description":"Watch a show on TV or Netflix.",
+	"category":"fun",
+	"selected": false
+},
+{
+	"ID":9,
+	"title":"Make something",
+	"description":"Draw something, write something, or try a craft or hobby.",
+	"category":"fun",
+	"selected": false
+}]
