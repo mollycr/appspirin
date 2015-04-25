@@ -4,6 +4,9 @@ var app = express();
 var rootDir = "/home/mrobison/appspirin";
 
 app.use(favicon(__dirname + '/images/favicon.ico'));
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
     //show splash screen for n seconds
@@ -80,7 +83,15 @@ app.get('/checkin', function(req, res){
 app.post('/checkin', function(req, res){
     //display suggestions for user and level, ordered by usage
     //send on to strategy page
-    res.sendFile('templates/suggestions.html', { root: rootDir });
+	if(req.body.stress==0){
+		res.sendFile('templates/noStress.html', { root: rootDir });
+	}
+	else if(req.body.stress==5){
+		res.sendFile('templates/moreHelp.html', { root: rootDir });
+	}
+	else{
+    	res.sendFile('templates/suggestions.html', { root: rootDir });
+	}
 });
 
 app.get('/strategies', function(req, res){

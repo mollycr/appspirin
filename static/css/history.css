@@ -27,7 +27,11 @@
 
 .arrow{
 	width: 40px;
-	margin-top: -50px;
+	margin-bottom: 15px;
+}
+
+#previous, #next{
+	z-index: 999;
 }
 
 .right{

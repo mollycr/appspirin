@@ -23,38 +23,9 @@
 			<a class="likeabutton bar" href="historyStrats">Strategies</a>
 	
 			<div id="cal-heatmap"></div>
-			<script type="text/javascript">
-				var cal = new CalHeatMap();
-				cal.init({
-					data: "/static/history.json",
-					id: "graph_k",
-					domain: "month",
-					subDomain: "x_day",
-					range: 1,
-					cellSize: 35,
-					cellPadding: 5,
-					cellRadius: 5,
-					domainGutter: 10,
-					subDomainTextFormat: "%d",
-					weekStartOnMonday: false,
-					displayLegend: false,
-					legend: [0.5, 1.5, 2.5, 3.5, 4.5],
-					onClick: function(date, nb) {
-						//this needs to take the seconds-from-epoch timestamp of the
-						//day that was clicked on, and fill in #onClick-placeholder
-						//with the corresponding diary entry from static/diary.json
-						$("#onClick-placeholder").html("You just clicked <br/>on <b>" +
-							date + "</b> <br/>with <b>" +
-							(nb === null ? "unknown" : nb) + "</b> items"
-						);
-					}
-				});
-			</script>
-
-			<a href="#" onclick = "prevMonth()"><img class="arrow left" src="/images/prev.png"/></a>
-			<a href="#" onclick = "nextMonth()"><img class="arrow right" src="/images/next.png"/></a>
-
-			<!-- this won't end well -->
+			
+			<img id="previous" class="arrow left" src="/images/prev.png"/>
+			<img id="next" class="arrow right" src="/images/next.png"/>
 			<div class="legend">
 				<div class="box q1">0</div>
 				<div class="box q2">1</div>
@@ -70,5 +41,36 @@
 			
 
 		</div>
+
+		<script type="text/javascript">
+			var cal = new CalHeatMap();
+			cal.init({
+				data: "/static/history.json",
+				id: "graph_k",
+				domain: "month",
+				subDomain: "x_day",
+				range: 1,
+				cellSize: 35,
+				cellPadding: 5,
+				cellRadius: 5,
+				domainGutter: 10,
+				subDomainTextFormat: "%d",
+				weekStartOnMonday: false,
+				displayLegend: false,
+				legend: [0.5, 1.5, 2.5, 3.5, 4.5],
+				onClick: function(day, nb) {
+					//this needs to take the seconds-from-epoch timestamp of the
+					//day that was clicked on, and fill in #onClick-placeholder
+					//with the corresponding diary entry from static/diary.json
+					$.getJSON( "static/diary.json", function( data ) {
+					$("#onClick-placeholder").html(data[day.getDate()]);
+					});
+				},
+				//itemSelector: "#cal-heatmap",
+				previousSelector: "#previous",
+				nextSelector: "#next"
+			});
+		</script>
+
     </body>
 </html>
