@@ -1,0 +1,11 @@
+<a href="#" ng-click="showNew()">+ New Stragegy</a>
+<form method="post" action="/editStrategies" >
+	<div class="scrollable">
+		<div class="stratCard" ng-repeat="strat in strats">
+			<input type="checkbox" value={{$index}}>
+       	    <div class="title">{{strat.title}}</title></div>
+		</div>
+	</div>
+	<a href="#" class="likeabutton" ng-click="deleteSelected()">Delete Selected</a>
+</form>
+

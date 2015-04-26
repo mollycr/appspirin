@@ -176,10 +176,6 @@ app.get('/resources/faq', function(req, res){
 	res.sendFile('templates/resources/counselingFAQ.html', { root: rootDir});
 });
 
-app.get('/resources/time', function(req, res){
-	res.sendFile('templates/resources/timeManagement.html', { root: rootDir});
-});
-
 app.get('/resources/stress', function(req, res){
 	res.sendFile('templates/resources/stressManagement.html', { root: rootDir});
 });

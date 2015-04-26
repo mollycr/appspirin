@@ -4,29 +4,20 @@
         <title>Edit Strategies</title>
         <link type="text/css" rel="stylesheet" href="static/css/appspirin.css">
         <link type="text/css" rel="stylesheet" href="static/css/editStrategies.css">
+        <link type="text/css" rel="stylesheet" href="static/css/newStrat.css">
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <meta name="viewport" content="width = 320"/>
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
    </head>
-    <body>
+    <body ng-app="MyApp" ng-controller="stratController" ng-view>
 		<div class="header">
 			<a href="/home"><img class="logo" src="/images/home.png"/></a>
 			<h1>Settings</h1>
 		</div>
-		<div class="wrapper">
-			<a href="/newStrategy">+ New Stragegy</a>
-			<form ng-app="MyApp" ng-controller="stratController" method="post" action="/editStrategies" >
-				<div class="scrollable">
-					<div class="stratCard" ng-repeat="strat in strats">
-						<input type="checkbox" value={{$index}}>
-		        	    <div class="title">{{strat.title}}</title></div>
-					</div>
-				</div>
-				<a href="#" class="likeabutton" ng-click="deleteSelected()">Delete Selected</a>
-			</form>
-
+		<div ng-include src="content" class="wrapper">
+			
 		</div>
 
 		<script type="text/javascript">
@@ -37,12 +28,34 @@
 					$scope.strats = response.data;
 				});
 
+				$scope.content = "static/deleteStrategies.html";
+
 				$scope.deleteSelected = function(){
-					var times = 0;
 					$("input:checked").each(function() {
-						$scope.strats.splice($(this).val()-times, 1);
-						times++;
+						$scope.strats.splice($(this).val(), 1);
+						var value=0;
+						$("input").each(function(){
+							$(this).val(value++);
+						});
 					});
+				};
+				
+				$scope.showNew = function(){
+					$scope.content = "static/newStrategy.html";
+				};
+				
+				$scope.addStrategy = function(){
+					//get the info for the new strategy
+					var temp = new Object();
+					temp.ID = $scope.strats.length + 1;
+					temp.title = $("#title").val();
+					temp.description = $("#description").val();
+					temp.category = $("#category").val();
+					temp.selected = false;
+					//add it to $scope.strats
+					$scope.strats.push(temp);
+					//render the delete page
+					$scope.content = "static/deleteStrategies.html";
 				};
 			});
 		</script>

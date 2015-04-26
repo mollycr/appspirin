@@ -1,0 +1,14 @@
+<h2> Add a new strategy</h2>
+<form action="/newStrategy" method="post">
+	<input id="title" type="text" placeholder="Title"/>
+	<textarea id="description" class="desc" placeholder="Description"></textarea>
+	<input placeholder="Time (minutes)" type="number">
+	<select id="category">
+		<option value="null" disabled selected>Category:</option>
+		<option value="fun">Fun</option>
+		<option value="emotional">Emotional</option>
+		<option value="physical">Physical</option>
+		<option value="interpersonal">Interpersonal</option>
+	</select>
+	<a href="#" class="likeabutton" ng-click="addStrategy()">Save</a>
+</form>

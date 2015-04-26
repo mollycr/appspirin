@@ -1,1 +1,2 @@
-make add/delete work within a session
+make the add strategy page part of the delete strategy page
+make adding a strategy work
