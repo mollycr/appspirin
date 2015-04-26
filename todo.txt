@@ -1,2 +1,1 @@
-make the resources real
 make add/delete work within a session

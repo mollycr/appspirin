@@ -1,0 +1,19 @@
+.wrapper{
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	height: 100%;
+	overflow: auto;
+}
+
+p{
+	margin-bottom: 10px;
+}
+
+.link{
+	font-size: 22px;
+}
+
+.description{
+	margin: 10px 0 15px 10px;
+}
