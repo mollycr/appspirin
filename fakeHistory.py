@@ -5,11 +5,11 @@ from random import randint
 
 json = open("history.json", "w")
 
-start = 1427846400
+start = 1420070400
 day = 86400
 json.write("{")
 
-x = 29
+x = 365
 while(x>0):
 	json.write('"' + str(start) + '":' + str(randint(0,5)) + ',\n')
 	start = start + day
