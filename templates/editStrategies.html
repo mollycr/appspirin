@@ -31,12 +31,13 @@
 				$scope.content = "static/deleteStrategies.html";
 
 				$scope.deleteSelected = function(){
+					var temp = 0;
 					$("input:checked").each(function() {
-						$scope.strats.splice($(this).val(), 1);
-						var value=0;
-						$("input").each(function(){
-							$(this).val(value++);
-						});
+						$scope.strats.splice($(this).val()-temp++, 1);
+					});
+					var value=0;
+					$("input").each(function(){
+						$(this).val(value++);
 					});
 				};
 				
@@ -53,7 +54,11 @@
 					temp.category = $("#category").val();
 					temp.selected = false;
 					//add it to $scope.strats
-					$scope.strats.push(temp);
+					$scope.strats.unshift(temp);
+					var value=0;
+					$("input").each(function(){
+						$(this).val(value++);
+					});
 					//render the delete page
 					$scope.content = "static/deleteStrategies.html";
 				};
