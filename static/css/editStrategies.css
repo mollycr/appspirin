@@ -19,18 +19,17 @@ input[type='checkbox']:checked {
 
 .scrollable{
 	margin-top: 20px;
-	height: 260px;
+	height: 280px;
 	overflow: scroll;
-	border: 2px solid #666;
-	background-color: #666;
+	border: 1px solid #666;
 }
 
 .stratCard{
 	background-color: #fff;
-	border: 2px solid #666;
-	border-radius: 5px;
+	border-top: 1px solid #666;
 	font-size: 20px;
 	height: 50px;
+	overflow: auto;
 }
 
 .title{

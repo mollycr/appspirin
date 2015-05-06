@@ -26,7 +26,7 @@
 }
 
 .days input:checked + span {
-    background-color:#911;
+    background-color:#ff6911;
     color:#fff;
 }
 

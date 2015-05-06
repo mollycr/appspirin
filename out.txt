@@ -1,0 +1,6 @@
+Appspirin listening at http://0.0.0.0:3000
+Error: ENOENT, stat '/home/mrobison/appspirin/templates/newStrategy.html'
+Error: ENOENT, stat '/home/mrobison/appspirin/templates/newStrategy.html'
+Error: ENOENT, stat '/home/mrobison/appspirin/templates/newStrategy.html'
+Error: ENOENT, stat '/home/mrobison/appspirin/templates/newStrategy.html'
+Error: ENOENT, stat '/home/mrobison/appspirin/templates/newStrategy.html'

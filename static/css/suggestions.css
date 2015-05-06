@@ -1,14 +1,12 @@
 .scrollable{
-	height: 260px;
+	height: 280px;
 	overflow: scroll;
-	border: 2px solid #666;
-	background-color: #666;
+	border: 1px solid #666;
 }
 
 .stratCard{
 	background-color: #fff;
-	border: 2px solid #666;
-	border-radius: 5px;
+	border-top: 1px solid #666;
 	font-size: 18px;
 	overflow: auto;
 	zoom: 1;
@@ -29,12 +27,16 @@
 }
 
 .textbox{
-	margin-top: 15px;
-	background-color: #fff;
-	border: 2px solid #666;
+	background-color: #a3cccc;
+	width: 270px;
+	height: 70px;
+	overflow: scroll;
+	border: none;
 	border-radius: 5px;
 	padding: 5px;
-	height: 75px;
+	font-size: 18px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .title{
