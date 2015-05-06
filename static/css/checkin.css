@@ -3,9 +3,10 @@ label > .wrap > input{ /* HIDE RADIO */
 }
 label > .wrap > input + img{ /* IMAGE STYLES */
   border:2px solid transparent;
+  border-radius: 20px;
 }
 label > .wrap > input:checked + img{ /* (CHECKED) IMAGE STYLES */
-  border:3px solid #ff6911;
+  border:2px solid #ff6911;
   border-radius: 20px;
 }
 
